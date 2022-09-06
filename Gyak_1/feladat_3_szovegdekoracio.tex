@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hulipsum}
+
+\begin{document}
+\fcolorbox{blue}{white}{\reflectbox{szöveg függőleges tükrözés}}
+
+\scalebox{2.0}[1]{\reflectbox{\rotatebox{180}{szöveg vízszintes tükrözés}}}
+
+\rotatebox{90}{szöveg forgatása 90-el}
+
+\rotatebox{270}{szöveg forgatása 270-el}
+
+\colorbox{black}{\textcolor{white}{\hulipsum[1]}}
+
+\fcolorbox{red}{white}{\textcolor{red}{szöveg piros kerettel}}
+
+\end{document}
+
+
+

@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage[inline]{enumitem}
+\usepackage{hulipsum}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+
+\begin{document}
+
+
+
+\begin{itemize*}[itemjoin*={ ~és~ }]
+
+\item[*]{fa}
+\label{kerítés}
+\item[*]{kert}
+\item[*]{bokor}
+\end{itemize*}
+
+\begin{enumerate}
+\item{fa}
+\begin{enumerate}
+\item[a.]{tölgy}
+\begin{enumerate}
+\item{kocsányos}
+\label{kor}
+\begin{enumerate}
+\item{1 éves}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\hulipsum[1]
+
+\begin{enumerate}[resume*]
+\item virág
+\item[*] bokor
+\stepcounter{enumi}
+\item kert
+\end{enumerate}
+
+\begin{description}[style=unboxed,style=nextline, style=sameline]
+\item \hulipsum[1]
+\item[\textsl{fák}] \hulipsum[1]
+\item[\textsl{A fenyőerdők csodálatos élményekkel gazdagítják a túrázókat, emellett lakóhelyként is kitűnően funkcionálnak azok számára, akik a nagyvilágtól elvonulva szeretnék élni az életüket.}]  \hulipsum[1]
+\end{description}
+
+\ref{kerítés}
+\ref{kor}
+
+\ref{1.kép}
+\ref{2.kép}
+
+\newpage
+
+\begin{figure}
+\hulipsum[1]
+\includegraphics[keepaspectratio,width=5cm, height=5cm]{demo}
+\caption{1. ábra}
+\label{1.kép}
+\includegraphics[keepaspectratio,width=5cm, height=5cm,angle=180]{demo}
+\caption{2. ábra}
+\label{2.kép}
+\hulipsum[1]
+\end{figure}
+
+
+
+\begin{tabular}{p{3em}||rcl|}
+  & egy & kettő & három \\\hline\hline  Helló világ &  négy & öt & hat \\\cline{2-4}  & hét & nyolc & kilenc \\\cline{2-2}\cline{4-4} lórum ipse & tíz & & tizenkettő \\\hline
+\end{tabular}
+
+\bigbreak
+\bigbreak
+
+\rowcolors[\hline]{2}{blue!20}{yellow!20}
+\begin{tabular}{r|c|l}
+ egy & kettő & három \\\hline négy & öt & hat \\ hét & nyolc & kilenc \\ tíz & & tizenkettő \\
+\end{tabular}
+
+\bigbreak
+\bigbreak
+
+\rowcolors{2}{}{}
+\begin{tabular}{r!{\color{red}\vline}c|l|}
+egy & \multicolumn{2}{c|}{kettő} \\\hline 
+\multirow{2}{2em}{négy} & öt & hat \\\cline{2-3}
+  & \multicolumn{2}{c|}{\multirow{2}{2em}{nyolc}}   \\\cline{1-1} 
+  tíz & \multicolumn{2}{c|}{}  \\\hline
+\end{tabular}
+
+
+\end{document}
+
+

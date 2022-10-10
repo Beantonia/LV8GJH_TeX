@@ -1,0 +1,103 @@
+\documentclass{article}
+
+\usepackage{float}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{algorithmic}
+\usepackage{hulipsum}
+\usepackage{sidecap}
+\usepackage{algorithm}
+
+
+\newtheorem{tet}{Tétel}
+\newtheorem{defin}{Definíció}
+\newtheorem{lemma}[tet]{Lemma}
+\newtheorem{feladat}{Feladat}[section]
+\newtheorem*{megj}{Megjegyzés:}
+\newfloat{forraskod}{htb}{for}
+\floatstyle{ruled}
+\newfloat{kod}{htb}{kod}
+
+
+
+\begin{document}
+\tableofcontents
+
+\listof{forraskod}{Forráskódok listája:}
+\listof{kod}{Kódok listája:}
+
+\floatstyle{plain}
+\begin{tet}[Arkhimédész]
+Minden vízbe mártott test a súlyából annyit veszt, amennyi az általa kiszorított víz súlya.
+\end{tet}
+
+\floatstyle{plain}
+\begin{tet}[Pitagorasz]
+Derékszögű háromszög esetén az átfogó hosszának négyzete megegyezik az átfogók hosszának négyzetösszegével.
+\end{tet}
+
+\begin{proof}[Pitagorasz tétel bizonyítása]
+Legyen a=3 cm, b=4cm,c=5cm
+\end{proof}
+
+\begin{defin}
+A derékszögű háromszög...
+\end{defin}
+
+
+\begin{defin}
+A négyzet olyan síkidom, amely...
+\end{defin}
+
+\begin{megj}
+Ez itt egy megjegyzés
+\end{megj}
+
+\begin{lemma}
+A paralelogramma két párhuzamos oldalpárral rendelkező négyszög.
+\end{lemma}
+
+\section{Könnyű feladatok}
+\begin{feladat}
+Az {an} számtani sorozat első és harmadik tagjának összege 26, a második és negyedik 
+tagjának összege pedig 130.
+\end{feladat}
+
+\begin{feladat}
+Hány fertály óra egy fertály nap, ha a fertály szó jelentése negyed?
+\end{feladat}
+
+\section{Haladó feladatok}
+\begin{feladat}
+A kapitány hajója 40 éves. Éppen kétszer annyi idős, mint amennyi a kapitány volt akkor, amikor a hajója annyi idős volt, mint most a kapitány. Hány éves a kapitány? 
+\end{feladat}
+
+
+\begin{forraskod}
+\caption{ez egy kód}
+\begin{verbatim}
+\hulipsum
+\section{első}
+\end{verbatim}
+\end{forraskod}
+
+\hulipsum[3]
+
+\begin{forraskod}
+\caption{egy másik kód}
+\begin{verbatim}
+\begin{tet}[Pitagorasz]
+Derékszögű háromszög esetén az átfogó hosszának négyzete megegyezik az átfogók hosszának négyzetösszegével.
+\end{tet}
+\end{verbatim}
+\end{forraskod}
+
+\begin{kod}
+\caption{ez már tényleg egy kód}
+\lstinputlisting[language=python,tabsize=4,numbers=left,stepnumber=4,frame=shadowbox]{code.txt}
+\end{kod}
+
+
+
+
+\end{document}

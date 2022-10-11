@@ -1,0 +1,33 @@
+\documentclass{book}
+
+\usepackage{hulipsum}
+\usepackage{hyperref}[backref=section]
+\usepackage{makeidx}
+\usepackage{tocbibind}
+
+
+\title{A botanika művészete} 
+\author{Berecz Antónia}
+\date{2001. június 6.}
+
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+\mainmatter
+\chapter{A botanika jelentése}
+\hulipsum
+\index botanika
+\index Élet
+\chapter{A botanika története}
+\hulipsum
+\chapter{A botanika jelentősége}
+\hulipsum
+\index Élet
+\index{életek!itemize}
+\index{megjegyzés}
+\backmatter
+\printindex
+\bibliographystyle{plain}
+\bibliography{ltx.bib}
+\end{document}

@@ -1,0 +1,135 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage[inline]{enumitem}
+\usepackage{xcolor}
+
+
+\begin{document}
+Bevezető
+\begin{enumerate}[label=\alph*)]
+\item\noindent Az $\frac{1}{n^2} $ sorösszege: \[\sum_{i=1}^\infty \frac{1}{n^2}  = \frac{\pi^2}{6}.\] 
+\item Az n! (n faktoriális) a számok szorzata 1-től n-ig, azaz  \[n! := \prod_{k=1}^n k = 1 \cdot 2 \cdot \ldots \cdot n. \] 
+Konvenció szerint $0! = 1.$\\
+\item Legyen  $0 \leq k \leq n.$ A binomiális együttható \[\binom{n}{k} := \frac{n!}{k! \cdot (n - k)!},\] ahol a faktoriálist (\textcolor{red}{1}) szerint definiáljuk.
+\item Az előjel- azaz szignum függvényt a következőképpen definiáljuk: \[sgn(x) := \begin{cases} 1, &  \text{ha } x > 0\\ 0, &  \text{ha } x = 0\\- 1, &  \text{ha } x < 0  \end{cases}\]
+\end{enumerate}
+
+Determináns
+\begin{enumerate}[label=\alph*)]
+\item Legyen \[ [n] := \{1, 2, \ldots , n\} \] a természetes számok halmaza 1-től n-ig.
+\item Egy n-edrendű permutáció $\sigma$ egy bijekció [n]-ből [n]-be. Az n-edrendű permutációk halmazát, az ún. szimmetrikus csoportot, $S_{n}$-nel jelöljük.
+\item  Egy $\sigma \in S_{n}$ permutációban inverziónak nevezünk egy ($i, j$) párt, ha $i < j$ de $\sigma i > \sigma j$.
+\item Egy $\sigma \in S_{n}$ permutáció paritásának az inverziók számát nevezzük: \[\tau(\sigma) := \vert \{ (i,j)  \vert  i,j \in [n], i<j, \sigma_{i} > \sigma_{j} \} \vert. \]
+\item Legyen $A \in \mathbb{R}^{n \times n}$, egy $n \times n$ -es (négyzetes) valós mátrix: 
+\[ A = \left(
+\begin{matrix} 
+a_{11}  & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn}\\
+\end{matrix}
+\right) \]
+\newpage
+Az A mátrix determinánsát a következőképpen definiáljuk:
+\[ det(A) =
+\begin{vmatrix*} 
+a_{11}  & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn}\\
+\end{vmatrix*} := \sum_{\sigma \in S_{n}} (-1)^{\tau (\sigma)} \prod_{i=1}^{n} a_{i \sigma_{i}}\]
+\end{enumerate}
+
+Logikai azonosság
+Tekintsük az $ L = {0, 1} $ halmazt, és rajta a következő, igazságtáblával definiált műveleteket:
+
+\[
+\begin{tabular}{c||c}
+ $x$ & $\bar{x}$  \\\hline
+ 0 & 1 \\
+ 1 & 0 \\
+\end{tabular}
+\]
+\[
+\begin{tabular}{c c||c|c|c}
+$x$ & $y$ & $x \vee  y$ & $x \wedge y$ & $x \rightarrow y$\\\hline
+0 & 0 & 0 & 0 & 1\\ 
+0 & 1 & 1 & 0 & 1\\ 
+1 & 0 & 1 & 0 & 0\\   
+1 & 1 & 1 & 1 & 1\\ 
+\end{tabular}
+\]
+
+Legyenek $a,b,c,d \in L.$ Belátjuk a következő azonosságot:
+\[
+(a \wedge b \wedge c) \rightarrow d = a \rightarrow (b \rightarrow (c \rightarrow d)).
+\]
+
+A következő azonosságokat bizonyítás nélkül használjuk:
+\[
+x \rightarrow y = \bar{x} \vee y
+\]
+\[
+\bar{x \vee y} = \bar{x} \wedge \bar{y}
+\hspace{1cm}
+\bar{x \wedge y} = \bar{x} \vee \bar{y}
+\]
+
+A (\textcolor{red}{3}) bal oldala, (\textcolor{red}{4}) felhasználásával
+\[
+(a\wedge b \wedge c) \rightarrow d \underset{(\textcolor{red}{4a})}{=} \bar{a \wedge b \wedge c} \vee d \underset{(\textcolor{red}{4b})}{=} (\bar{a} \vee \bar{b}  \vee \bar{c}) \vee b.
+\]
+
+A (\textcolor{red}{3}) jobb oldala, (\textcolor{red}{4a}) ismételt felhasználásával
+\[
+a \rightarrow (b  \rightarrow (c  \rightarrow d)) = \bar{a} \vee (b  \rightarrow (c  \rightarrow d))
+\]
+
+\[
+\textcolor{white}{a \rightarrow (b  \rightarrow (c  \rightarrow d))} = \bar{a} \vee (\bar{b}  \vee (c  \rightarrow d))
+\]
+
+\[
+\textcolor{white}{a \rightarrow (b  \rightarrow (c  \rightarrow d))} = \bar{a} \vee (\bar{b} \vee (\bar{c}  \vee d)),
+\]
+ami a $\vee$ asszociativitása miatt egyenlő \textcolor{red}{5} egyenlettel.
+
+\newpage
+Binomiális tétel
+\[
+(a+b)^{n+1}
+= (a+b) \cdot \left( \sum_{k=0}^n \binom{n}{k} a^{n-k}b^k \right)
+\]
+\[
+=\cdots \hspace{2,1cm}
+\]
+\[
+\hspace{4,4cm}
+= \sum_{k=0}^n \binom{n}{k} a^{(n+1)-k}b^k
++ \sum_{k=1}^{n+1} \binom{n}{k-1} a^{(n+1)-k}b^{k}
+\]
+\[
+=\cdots \hspace{2,1cm}
+\]
+\[
+\hspace{4,2cm}
+= \binom{n+1}{0} a^{n+1-0} b^0
++ \sum_{k=1}^n \binom{n+1}{k} a^{(n+1)-k}b^k
+\]
+\[
+\hspace{1,2cm}
++ \binom{n+1}{n+1} a^{n+1-(n+1)} b^{n+1}
+\]
+\[
+\hspace{1,1cm}
+= \sum_{k=0}^{n+1} \binom{n+1}{k} a^{(n+1)-k}b^k
+\]
+
+
+
+
+
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{amsfonts}
+\usepackage{pgffor}
+\usepackage{xcolor}
+\usepackage{hulipsum}
+\usepackage{array}
+\usepackage{colortbl}
+
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\felt}{[}{]}
+
+\begin{document}
+\[
+x^{\star} := \argmax_{x \in [0,1]} x \log_{2}(x).
+\]
+
+\[
+\ceil{x} \ceil*{\frac{5}{3}}
+\]
+
+\[
+\mathbb{E} \felt*{\sum_{i=1}^{N} X_{i}} = \mathbb{E} \felt*{\mathbb{E} \felt*{\sum_{i=1}^{N} X_{i} \vert* N}}
+\]
+
+\newcounter{számláló}
+\begin{minipage}{10cm}
+\parbox{0.8\linewidth}
+\text{\raggedleft{Kulcsgondolatok}}
+\hulipsum[1]
+\end{minipage}
+
+\[
+\begin{tabular}{c c||c|c|c}
+$x$ & $y$ & $x \vee  y$ & $x \wedge y$ & $x \rightarrow y$\\\hline
+0 & 0 & 0 & 0 & 1\\ 
+0 & 1 & 1 & 0 & 1\\ 
+1 & 0 & 1 & 0 & 0\\   
+1 & 1 & 1 & 1 & 1\\ 
+\end{tabular}
+\]
+
+\ifthenelse{\isodd{\value{page}}}{páratlan}{páros}
+
+\end{document}

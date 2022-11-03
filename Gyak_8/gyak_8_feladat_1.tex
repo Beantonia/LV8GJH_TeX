@@ -1,0 +1,107 @@
+\documentclass[aspectratio=169,12pt,fragile,allowframebreaks]{beamer}
+
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{hulipsum}
+\usepackage{graphicx}
+
+\usetheme{default}
+
+\begin{document}
+\transduration{10}
+\author{Berecz Antónia} 
+\title{Canciones} 
+\subtitle{letras}  
+\date{2022.11.03.} 
+\maketitle 
+\insertslidenumber.\ slide
+\section{Első szakasz}
+\begin{frame}{1. dia}{legelső dia}
+Ez az első frame
+\subsection{egy_pont_egy}
+\hulipsum
+\hulipsum
+\end{frame}
+
+\subsection{egy_pont_kettő}
+\begin{columns}
+\begin{column}{.5\linewidth}
+első oszlop tartalma
+\begin{enumerate}
+\item egy
+\item kettő
+\item három
+\item négy
+\end{enumerate}
+\begin{itemize}
+\item<2-> egy
+\item kettő
+\item három
+\item négy
+
+\end{itemize}
+
+\end{column}
+\begin{column}{.5\linewidth}
+második oszlop tartalma
+\begin{figure}[bt]
+\includegraphics[scale=0.2]{../kepek/kep}
+\caption{képaláírás}
+\end{figure}
+\end{column}
+\end{columns}
+
+\section{Második szakasz}
+\begin{frame}{2. dia}{második dia}
+\pause
+Igazán kreatív a cím
+\subsection{block}
+\begin{block}{block címe}
+block tartalma
+\end{block}
+\pause
+\subsection{exampleblock}
+\begin{exampleblock}{block címe}
+block tartalma
+\end{exampleblock}
+\subsection{alertblock}
+\begin{alertblock}{block címe}
+block tartalma
+\end{alertblock}
+\begin{alertblock}
+block tartalma
+\end{alertblock}
+\end{frame}
+
+\transdissolve<overlay>
+
+\section{Harmadik szakasz}
+\begin{frame}{3. dia}{harmadik dia}
+\subsection{Maneskin}
+\begin{theorem}[Maneskin]
+"Tonight is gonna be the lonliest..."
+\end{theorem}
+
+\subsection{Claroscuro}
+\begin{proof}[Claroscuro]
+"Yo no tengo limitas solo el cielo..."
+\end{proof}
+\end{frame}
+
+\section{Negyedik szakasz}
+\begin{frame}{4. dia}{negyedik dia}
+\begin{semiverbatim}
+\\begin{itemize}
+\\item \textcolor{red}{valami}
+\\item \textcolor{red}{valami más}
+\\begin{itemize}
+\\item \textcolor{blue}{egyéb}
+\\item \textcolor{blue}{valamicske}
+\\end{itemize}
+\\end{itemize}
+\end{semiverbatim}
+\end{frame}
+
+\end{document}
+
